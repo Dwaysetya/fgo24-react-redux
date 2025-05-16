@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@layer base {
+  .class-cart {
+    @apply bg-white p-8 rounded-lg shadow-md w-full max-w-2xl flex flex-col mb-10;
+  }
+}

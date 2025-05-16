@@ -38,26 +38,31 @@ cd directory-name
 5. Install the Depedencies
 
 ```
+ npm install tailwindcss @tailwindcss/vite
+```
+6. Install the Depedencies
+
+```
  npm i yup@hookform/resolver
 ```
 
-6. Install the Depedencies
+7. Install the Depedencies
 
 ```
 npm install
 ```
 
-7. run the project
+8. run the project
 
 ```
 npm run dev
 ```
 
-8. Project will running on (http://localhost:5173/)
+9. Project will running on (http://localhost:5173/)
 
 ## Depedencies
 
-This project requires Node.js to run, so make sure Node.js is installed on your device.
+This project requires React.js to run, so make sure React.js is installed on your device.
 
 - vite: used to document an HTTP server locally, easing the development and testing process.
 

@@ -11,17 +11,21 @@ const validationSchema = yup.object({
   name: yup
     .string()
     .min(3, "Nama minimal 3 karakter")
-    .required("Nama harus diisi"),
-  umur: yup.string().required("Umur harus diisi"),
+    .required("Nama wajib diisi"),
+  umur: yup.string().required("Umur wajib diisi"),
   gender: yup
     .mixed()
     .oneOf(["Laki-laki", "Perempuan"])
-    .required("gender harus diisi"),
-  smoker: yup.mixed().oneOf(["Ya", "Tidak"]).required(),
+    .required("Gender wajib diisi"),
+  smoker: yup
+    .mixed()
+    .oneOf(["Ya", "Tidak"])
+    .required("Status perokok wajib diisi"),
   rokok: yup.array().notRequired(),
 });
 
 function MainPage() {
+  // const [isData, setData] = React.useState();
   const {
     register,
     handleSubmit,
@@ -33,21 +37,24 @@ function MainPage() {
 
   function submitData(data) {
     const getData = localStorage.getItem("surveyData");
-    const pushData = getData ? JSON.parse(getData) : [];
 
-    pushData.push(data);
+    const dataArray = getData ? JSON.parse(getData) : [];
 
-    localStorage.setItem("surveyData", JSON.stringify(pushData));
+    dataArray.push(data);
+    localStorage.setItem("surveyData", JSON.stringify(dataArray));
+
+    const checkSaved = localStorage.getItem("surveyData");
+    const parsed = JSON.parse(checkSaved);
+
+    if (parsed.length > 0) {
+      Swal.fire({
+        title: "Berhasil!",
+        text: "Data berhasil disimpan",
+        icon: "success",
+        confirmButtonText: "OK",
+      });
+    }
   }
-
-  const handleClick = () => {
-    Swal.fire({
-      title: "Berhasil!",
-      text: "Data berhasil disimpan",
-      icon: "success",
-      confirmButtonText: "OK",
-    });
-  };
 
   return (
     <div className="min-h-screen flex flex-col justify-center items-center bg-gray-100 p-6 w-full">
@@ -140,7 +147,6 @@ function MainPage() {
           <Button
             type="submit"
             className="text-white hover:bg-white shadow-md hover:text-blue-700"
-            onClick={handleClick}
           >
             Simpan
           </Button>

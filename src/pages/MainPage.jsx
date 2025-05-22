@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import Swal from "sweetalert2";
+import { useDispatch, useSelector } from "react-redux";
+import { addUsers } from "../redux/reducers/surveyResult";
 
 const validationSchema = yup.object({
   name: yup
@@ -26,6 +28,10 @@ const validationSchema = yup.object({
 
 function MainPage() {
   // const [isData, setData] = React.useState();
+  const dispatch = useDispatch();
+  const users = useSelector((state) => state.surveyResult.data);
+  console.log("aa", users);
+  console.log("data", users);
   const {
     register,
     handleSubmit,
@@ -34,31 +40,34 @@ function MainPage() {
     resolver: yupResolver(validationSchema),
   });
   console.log("ini", register);
-
-  function submitData(data) {
-    const getData = localStorage.getItem("surveyData");
-
-    const dataArray = getData ? JSON.parse(getData) : [];
-
-    dataArray.push(data);
-    localStorage.setItem("surveyData", JSON.stringify(dataArray));
-
-    const checkSaved = localStorage.getItem("surveyData");
-    const parsed = JSON.parse(checkSaved);
-
-    if (parsed.length > 0) {
-      Swal.fire({
-        title: "Berhasil!",
-        text: "Data berhasil disimpan",
-        icon: "success",
-        confirmButtonText: "OK",
-      });
-    }
+  function saveData(value) {
+    dispatch(addUsers(value));
   }
+
+  // function submitData(data) {
+  //   const getData = localStorage.getItem("surveyData");
+
+  //   const dataArray = getData ? JSON.parse(getData) : [];
+
+  //   dataArray.push(data);
+  //   localStorage.setItem("surveyData", JSON.stringify(dataArray));
+
+  //   const checkSaved = localStorage.getItem("surveyData");
+  //   const parsed = JSON.parse(checkSaved);
+
+  //   if (parsed.length > 0) {
+  //     Swal.fire({
+  //       title: "Berhasil!",
+  //       text: "Data berhasil disimpan",
+  //       icon: "success",
+  //       confirmButtonText: "OK",
+  //     });
+  //   }
+  // }
 
   return (
     <div className="min-h-screen flex flex-col justify-center items-center bg-gray-100 p-6 w-full">
-      <form onSubmit={handleSubmit(submitData)}>
+      <form onSubmit={handleSubmit(saveData)}>
         <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-2xl flex flex-col gap-5 justify-center border-t-10 border-orange-500 mb-10">
           <h1 className="text-xl font-bold"> Form Survey Perokok</h1>
           <p>

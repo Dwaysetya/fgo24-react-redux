@@ -1,20 +1,20 @@
 ## CREATE REACT FORM SURVEY
 
-This repository contains information about how to create a survey form, then the input results are entered into the survey results table using React and Tailwind, and page navigation using React Router-DOM, and using the Yup Resolver library for form validation.
+This repository contains information about how to create a survey form, then the input results are entered into the survey results table using React and Tailwind, and page navigation using React Router-DOM, and using the Yup Resolver library for form validation and add redux toolkit for new project.
 
 ## Preview
 
 ## Result
 
 ![Result](./src/assets/images/Screenshot%202025-05-17%20at%2001.31.23.png)
-![Result](./src/assets/images/Screenshot%202025-05-17%20at%2001.31.47.png)
+![Result](./src/assets//Screenshot%202025-05-22%20at%2011.44.46.png)
 
 ## How to Run this project
 
 1. Clone this project
 
 ```
-git clone   https://github.com/Dwaysetya/fgo24-react-form.git
+git clone   https://github.com/Dwaysetya/fgo24-react-redux
 ```
 
 2. Enter the project firectory

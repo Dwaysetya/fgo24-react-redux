@@ -42,6 +42,14 @@ function MainPage() {
   console.log("ini", register);
   function saveData(value) {
     dispatch(addUsers(value));
+      if (users.length > 0) {
+        Swal.fire({
+          title: "Berhasil!",
+          text: "Data berhasil disimpan",
+          icon: "success",
+          confirmButtonText: "OK",
+        });
+      }
   }
 
   // function submitData(data) {

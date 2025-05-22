@@ -7,7 +7,7 @@ This repository contains information about how to create a survey form, then the
 ## Result
 
 ![Result](./src/assets/images/Screenshot%202025-05-17%20at%2001.31.23.png)
-![Result](./src/assets//Screenshot%202025-05-22%20at%2011.44.46.png)
+![Result](./src/assets/Screenshot%202025-05-22%20at%2011.56.36.png)
 
 ## How to Run this project
 

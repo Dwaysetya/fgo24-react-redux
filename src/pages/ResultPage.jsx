@@ -22,7 +22,7 @@ function ResultForm() {
   return (
     <div className="min-h-screen flex flex-col justify-center items-center bg-gray-100 p-6 w-full">
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-2xl flex flex-col justify-center items-center border-t-10 border-orange-500 mb-10">
-        <h1 className="font-bold text-2xl">Data Hasil Survey</h1>
+        <h1 className="font-bold text-2xl mb-5">Data Hasil Survey</h1>
         <table>
           <thead className="w-[30px]">
             <tr className="border-1">
@@ -38,13 +38,29 @@ function ResultForm() {
             {data.map((item, index) => (
               <tr key={index}>
                 <td className="border-1 w-[500px] self-center p-5">
-                  {item.name}
+                  <p className="flex justify-center items-center">
+                    {item.name}
+                  </p>
                 </td>
-                <td className="border-1 w-[500px]">{item.umur}</td>
-                <td className="border-1 w-[500px]">{item.gender}</td>
-                <td className="border-1 w-[500px]">{item.smoker}</td>
                 <td className="border-1 w-[500px]">
-                  {item.rokok?.join(", ") || "-"}
+                  <p className="flex justify-center items-center">
+                    {item.umur}
+                  </p>
+                </td>
+                <td className="border-1 w-[500px]">
+                  <p className="flex justify-center items-center">
+                    {item.gender}
+                  </p>
+                </td>
+                <td className="border-1 w-[500px]">
+                  <p className="flex justify-center items-center">
+                    {item.smoker}
+                  </p>
+                </td>
+                <td className="border-1 w-[500px]">
+                  <p className="flex justify-center items-center">
+                    {item.rokok?.join(", ") || "-"}
+                  </p>
                 </td>
                 <td className="border-1 w-[500px] ">
                   <p

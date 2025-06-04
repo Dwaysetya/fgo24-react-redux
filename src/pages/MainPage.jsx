@@ -40,38 +40,18 @@ function MainPage() {
     resolver: yupResolver(validationSchema),
   });
   console.log("ini", register);
+
   function saveData(value) {
     dispatch(addUsers(value));
-      if (users.length > 0) {
-        Swal.fire({
-          title: "Berhasil!",
-          text: "Data berhasil disimpan",
-          icon: "success",
-          confirmButtonText: "OK",
-        });
-      }
+    if (users.length > 0) {
+      Swal.fire({
+        title: "Berhasil!",
+        text: "Data berhasil disimpan",
+        icon: "success",
+        confirmButtonText: "OK",
+      });
+    }
   }
-
-  // function submitData(data) {
-  //   const getData = localStorage.getItem("surveyData");
-
-  //   const dataArray = getData ? JSON.parse(getData) : [];
-
-  //   dataArray.push(data);
-  //   localStorage.setItem("surveyData", JSON.stringify(dataArray));
-
-  //   const checkSaved = localStorage.getItem("surveyData");
-  //   const parsed = JSON.parse(checkSaved);
-
-  //   if (parsed.length > 0) {
-  //     Swal.fire({
-  //       title: "Berhasil!",
-  //       text: "Data berhasil disimpan",
-  //       icon: "success",
-  //       confirmButtonText: "OK",
-  //     });
-  //   }
-  // }
 
   return (
     <div className="min-h-screen flex flex-col justify-center items-center bg-gray-100 p-6 w-full">

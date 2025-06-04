@@ -20,46 +20,59 @@ git clone   https://github.com/Dwaysetya/fgo24-react-redux
 2. Enter the project firectory
 
 ```
-cd directory-name
+cd fgo24-react-redux
 ```
 
 3. Install the Depedencies
 
 ```
- npm create vite@latest name-file -- --template react
+ npm i react-router-dom
 ```
 
 4. Install the Depedencies
 
 ```
- npm i react-router-dom
+ npm install tailwindcss @tailwindcss/vite
 ```
 
 5. Install the Depedencies
 
 ```
- npm install tailwindcss @tailwindcss/vite
-```
-6. Install the Depedencies
-
-```
- npm i yup@hookform/resolver
-```
-
-7. Install the Depedencies
-
-```
 npm install
 ```
 
-8. run the project
+6. run the project
 
 ```
 npm run dev
 ```
 
-9. Project will running on (http://localhost:5173/)
+7. Project will running on (http://localhost:8081/)
 
+## With Docker
+
+1. Clone this project
+
+```
+git clone   https://github.com/Dwaysetya/fgo24-react-redux-persist
+```
+
+2. Get into the path
+
+```
+cd fgo24-react-redux-persist
+```
+
+3. Build image
+
+```
+docker build . -t survey:latest
+```
+
+4. Run image with docker
+```
+docker run -p 8080:80 -d survey:latest
+```
 ## Depedencies
 
 This project requires React.js to run, so make sure React.js is installed on your device.

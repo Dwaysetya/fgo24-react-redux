@@ -71,7 +71,7 @@ docker build . -t survey:latest
 
 4. Run image with docker
 ```
-docker run -p 8080:80 -d survey:latest
+docker run -p 8081:80 -d survey:latest
 ```
 ## Depedencies
 
